@@ -1,4 +1,4 @@
-# KeyboardPaste
+# SettingsRestart
 Simply adds a restart button on Settings, next to the Exit button.
 
 ### MelonLoader
