@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using System.Diagnostics;
 
-namespace KeyboardPaste
+namespace SettingsRestart
 {
     public static class BuildInfo
     {
@@ -14,7 +14,7 @@ namespace KeyboardPaste
         public const string Author = "Lily";
         public const string Company = null;
         public const string Version = "1.0.0";
-        public const string DownloadLink = "https://github.com/KortyBoi/SettingsRestart";
+        public const string DownloadLink = "https://github.com/MintLily/SettingsRestart";
         public const string Description = "Simply adds a restart button on Settings, next to the Exit button.";
     }
 

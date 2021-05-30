@@ -4,24 +4,24 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using MelonLoader;
 
-[assembly: AssemblyTitle(KeyboardPaste.BuildInfo.Name)]
-[assembly: AssemblyDescription(KeyboardPaste.BuildInfo.Description)]
+[assembly: AssemblyTitle(SettingsRestart.BuildInfo.Name)]
+[assembly: AssemblyDescription(SettingsRestart.BuildInfo.Description)]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(KeyboardPaste.BuildInfo.Company)]
-[assembly: AssemblyProduct(KeyboardPaste.BuildInfo.Name)]
-[assembly: AssemblyCopyright("Created by " + KeyboardPaste.BuildInfo.Author)]
-[assembly: AssemblyTrademark(KeyboardPaste.BuildInfo.Company)]
+[assembly: AssemblyCompany(SettingsRestart.BuildInfo.Company)]
+[assembly: AssemblyProduct(SettingsRestart.BuildInfo.Name)]
+[assembly: AssemblyCopyright("Created by " + SettingsRestart.BuildInfo.Author)]
+[assembly: AssemblyTrademark(SettingsRestart.BuildInfo.Company)]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 //[assembly: Guid("")]
-[assembly: AssemblyVersion(KeyboardPaste.BuildInfo.Version)]
-[assembly: AssemblyFileVersion(KeyboardPaste.BuildInfo.Version)]
+[assembly: AssemblyVersion(SettingsRestart.BuildInfo.Version)]
+[assembly: AssemblyFileVersion(SettingsRestart.BuildInfo.Version)]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: MelonInfo(typeof(KeyboardPaste.Main),
-    KeyboardPaste.BuildInfo.Name,
-    KeyboardPaste.BuildInfo.Version,
-    KeyboardPaste.BuildInfo.Author,
-    KeyboardPaste.BuildInfo.DownloadLink)]
+[assembly: MelonInfo(typeof(SettingsRestart.Main),
+    SettingsRestart.BuildInfo.Name,
+    SettingsRestart.BuildInfo.Version,
+    SettingsRestart.BuildInfo.Author,
+    SettingsRestart.BuildInfo.DownloadLink)]
 [assembly: MelonColor(ConsoleColor.Yellow)]
 
 //[assembly: MelonOptionalDependencies("", "", "", "")]
