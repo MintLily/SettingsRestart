@@ -2,6 +2,8 @@ using MelonLoader;
 using UnityEngine;
 using System;
 using System.Collections;
+using System.Linq;
+using System.Reflection;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using System.Diagnostics;
@@ -13,24 +15,26 @@ namespace SettingsRestart
         public const string Name = "SettingsRestart";
         public const string Author = "Lily";
         public const string Company = null;
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.1";
         public const string DownloadLink = "https://github.com/MintLily/SettingsRestart";
         public const string Description = "Simply adds a restart button on Settings, next to the Exit button.";
     }
 
     public class Main : MelonMod
     {
-        public override void OnApplicationStart()  { MelonLogger.Msg("Initialized!"); }
+        public override void OnApplicationStart()
+        {
+            MelonCoroutines.Start(GetAssembly());
+            MelonLogger.Msg("Initialized!");
+        }
 
-        public override void VRChat_OnUiManagerInit() { MelonCoroutines.Start(CreateButton()); }
+        private void OnUiManagerInit() => MelonCoroutines.Start(CreateButton());
 
         private GameObject RealSettingsExit, SettingsExit, SettingsRestart;
-        public bool shouldRun = true;
 
         private IEnumerator CreateButton()
         {
             yield return new WaitForSeconds(8f);
-            if (!shouldRun) yield break;
             try {
                 // Hey skids, if you're gonna take this and add to your mod, at least give me some credit. Much appreciated!
                 #region Exit Button
@@ -43,7 +47,7 @@ namespace SettingsRestart
                 SettingsExit.GetComponent<RectTransform>().sizeDelta -= new Vector2(150.0f, 0.0f);
                 SettingsExit.SetActive(true);
                 SettingsExit.GetComponentInChildren<Button>().onClick.AddListener(new System.Action(() =>
-                { RealSettingsExit.GetComponent<Button>().onClick.Invoke(); }));
+                RealSettingsExit.GetComponent<Button>().onClick.Invoke()));
                 #endregion
 
                 #region Restart Button
@@ -72,6 +76,29 @@ namespace SettingsRestart
             }
             #endregion
             yield break;
+        }
+
+        private IEnumerator GetAssembly()
+        {
+            Assembly assemblyCSharp = null;
+            while (true) {
+                assemblyCSharp = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(assembly => assembly.GetName().Name == "Assembly-CSharp");
+                if (assemblyCSharp == null)
+                    yield return null;
+                else
+                    break;
+            }
+
+            MelonCoroutines.Start(WaitForUiManagerInit(assemblyCSharp));
+        }
+
+        private IEnumerator WaitForUiManagerInit(Assembly assemblyCSharp)
+        {
+            Type vrcUiManager = assemblyCSharp.GetType("VRCUiManager");
+            PropertyInfo uiManagerSingleton = vrcUiManager.GetProperties().First(pi => pi.PropertyType == vrcUiManager);
+            while (uiManagerSingleton.GetValue(null) == null)
+                yield return null;
+            OnUiManagerInit();
         }
     }
 }
