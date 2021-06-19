@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMMusic", "AMMusic.csproj", "{178BC472-59F7-46F6-B760-65C18BA74382}"
+Project("{FBE04EC0-301F-11D3-BF4B-00C04F79EFBB}") = "SettingsRestart", "SettingsRestart.csproj", "{178BC472-59F7-46F6-B760-65C18BA74381}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{178BC472-59F7-46F6-B760-65C18BA74382}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{178BC472-59F7-46F6-B760-65C18BA74382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{178BC472-59F7-46F6-B760-65C18BA74381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178BC472-59F7-46F6-B760-65C18BA74381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
