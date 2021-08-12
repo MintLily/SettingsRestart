@@ -10,7 +10,7 @@ MelonLoader: v0.3.0+ (Alpha)<br>
 Game: VRChat build 1102+
 
 ### Preview
-![Preview](https://kortyboi.com/img/upload/VRChat_m3Vms43pbd.png)
+![Preview](https://mintlily.lgbt/img/upload/VRChat_m3Vms43pbd.png)
 
 # Change Log
 ### v1.0.1
